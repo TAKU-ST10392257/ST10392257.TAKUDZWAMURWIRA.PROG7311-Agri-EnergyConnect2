@@ -17,6 +17,8 @@ namespace Agri_EnergyConnect2.Controllers
         // GET: /Employee/Farmers
         public IActionResult Farmers()
         {
+           
+
             var farmers = _context.Farmers.ToList();
             return View(farmers);
         }
@@ -24,6 +26,8 @@ namespace Agri_EnergyConnect2.Controllers
         // GET: /Employee/FarmerProfile/5
         public IActionResult FarmerProfile(int id)
         {
+            
+
             var farmer = _context.Farmers.Include(f => f.Products).FirstOrDefault(f => f.Id == id);
             if (farmer == null) return NotFound();
 
@@ -33,6 +37,8 @@ namespace Agri_EnergyConnect2.Controllers
         // GET: /Employee/AllProducts
         public IActionResult AllProducts(string category, DateTime? productionDate)
         {
+            
+
             var products = _context.Products.AsQueryable();
 
             if (!string.IsNullOrEmpty(category))
@@ -51,6 +57,8 @@ namespace Agri_EnergyConnect2.Controllers
         // GET: /Employee/AddFarmer
         public IActionResult AddFarmer()
         {
+            
+
             return View();
         }
 
@@ -58,6 +66,8 @@ namespace Agri_EnergyConnect2.Controllers
         [HttpPost]
         public IActionResult AddFarmer(Farmer farmer)
         {
+          
+
             if (ModelState.IsValid)
             {
                 _context.Farmers.Add(farmer);

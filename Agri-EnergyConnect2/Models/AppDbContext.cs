@@ -29,7 +29,12 @@ namespace Agri_EnergyConnect2.Models
             // Seed Products (optional — you can comment these out for now)
             modelBuilder.Entity<Product>().HasData(
                 new Product { Id = 1, Name = "Tomatoes", Category = "Vegetable", ProductionDate = new DateTime(2024, 9, 1), FarmerId = 1 },
-                new Product { Id = 2, Name = "Maize", Category = "Grain", ProductionDate = new DateTime(2024, 8, 20), FarmerId = 2 }
+                new Product { Id = 2, Name = "Maize", Category = "Grain", ProductionDate = new DateTime(2024, 8, 20), FarmerId = 2 },
+                 new Product { Id = 3, Name = "Rice", Category = "Grain", ProductionDate = new DateTime(2025, 1, 1), FarmerId = 1 },
+                new Product { Id = 4, Name = "Milk", Category = "Dairy", ProductionDate = new DateTime(2025, 4, 20), FarmerId = 2 },
+ new Product { Id = 5, Name = "Bananas", Category = "Fruit", ProductionDate = new DateTime(2025, 5, 1), FarmerId = 1 },
+                new Product { Id = 6, Name = "Chicken", Category = "Livestock", ProductionDate = new DateTime(2025, 8, 15), FarmerId = 2 }
+
             );
         }
     }

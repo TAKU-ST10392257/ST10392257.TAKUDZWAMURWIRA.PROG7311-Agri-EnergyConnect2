@@ -1,0 +1,85 @@
+﻿/* Gruvbox Light Theme Base */
+body {
+    background-color: #fbf1c7;
+    color: #3c3836;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+
+/* Nav bar */
+.navbar {
+    background-color: #ebdbb2;
+    border-bottom: 2px solid #d5c4a1;
+}
+
+    .navbar a {
+        color: #3c3836;
+        margin-right: 15px;
+        font-weight: bold;
+    }
+
+        .navbar a:hover {
+            color: #d65d0e;
+            text-decoration: none;
+        }
+
+/* Headings */
+h1, h2, h3 {
+    color: #3c3836;
+}
+
+/* Form elements */
+input, select, textarea {
+    background-color: #f9f5d7;
+    border: 1px solid #d5c4a1;
+    color: #3c3836;
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+    button, input[type="submit"] {
+        background-color: #fabd2f;
+        border: none;
+        padding: 10px 20px;
+        color: #3c3836;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        button:hover, input[type="submit"]:hover {
+            background-color: #fe8019;
+        }
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fdf4c1;
+}
+
+th, td {
+    border: 1px solid #d5c4a1;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #ebdbb2;
+    color: #3c3836;
+}
+
+/* Error and validation messages */
+.text-danger {
+    color: #cc241d;
+}
+
+/* Footer (if needed) */
+footer {
+    margin-top: 40px;
+    padding-top: 10px;
+    border-top: 1px solid #d5c4a1;
+    color: #7c6f64;
+}

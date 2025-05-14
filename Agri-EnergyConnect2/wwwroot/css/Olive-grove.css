@@ -1,0 +1,75 @@
+﻿/* Font and Background */
+body {
+    background-color: #f4f1ee;
+    color: #3e3e3e;
+    font-family: 'Lato', sans-serif;
+    padding: 20px;
+}
+
+/* Headings with Merriweather */
+h1, h2, h3, h4 {
+    font-family: 'Merriweather', serif;
+    color: #556b2f;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #c9b79c;
+    border-bottom: 2px solid #8f9779;
+}
+
+    .navbar a {
+        color: #3e3e3e;
+        font-weight: bold;
+    }
+
+        .navbar a:hover {
+            color: #556b2f;
+            text-decoration: underline;
+        }
+
+/* Inputs and Buttons */
+input, select, textarea {
+    background-color: #fff;
+    border: 1px solid #8f9779;
+    color: #3e3e3e;
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+    button, input[type="submit"] {
+        background-color: #8f9779;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+    }
+
+        button:hover, input[type="submit"]:hover {
+            background-color: #556b2f;
+        }
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+th, td {
+    border: 1px solid #c9b79c;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #e2d8cb;
+    color: #3e3e3e;
+}
+
+/* Validation/Error */
+.text-danger {
+    color: #b0413e;
+}

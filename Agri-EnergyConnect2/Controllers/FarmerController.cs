@@ -16,6 +16,7 @@ namespace Agri_EnergyConnect2.Controllers
         // GET: /Farmer/MyProducts
         public IActionResult MyProducts()
         {
+           
             // Get the logged-in farmer's ID from the session
             var farmerId = HttpContext.Session.GetInt32("FarmerId");
             if (farmerId == null) return RedirectToAction("Index", "Home");
@@ -28,29 +29,48 @@ namespace Agri_EnergyConnect2.Controllers
         // GET: /Farmer/AddProduct
         public IActionResult AddProduct()
         {
+            ViewBag.Categories = new List<string>
+    {
+        "Vegetables",
+        "Fruits",
+        "Grains",
+        "Dairy",
+        "Livestock"
+    };
             return View();
         }
 
-        // POST: /Farmer/AddProduct
+ 
+
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult AddProduct(Product product)
         {
-            var farmerId = HttpContext.Session.GetInt32("FarmerId");
-            if (farmerId == null) return RedirectToAction("Index", "Home");
 
-            if (ModelState.IsValid)
+
+            if (!ModelState.IsValid)
             {
-                // Set the farmer's ID for the product
-                product.FarmerId = farmerId.Value;
-
-                // Add the product to the database
-                _context.Products.Add(product);
-                _context.SaveChanges();
-
-                return RedirectToAction("MyProducts");
+                ViewBag.Categories = new List<string>
+        {
+            "Vegetables",
+            "Fruits",
+            "Grains",
+            "Dairy",
+            "Livestock"
+        };
+                return View(product);
             }
 
-            return View(product);
+            var farmerId = HttpContext.Session.GetInt32("FarmerId");
+            if (farmerId == null)
+                return RedirectToAction("FarmerLogin", "Home");
+
+            product.FarmerId = farmerId.Value;
+            _context.Products.Add(product);
+            _context.SaveChanges();
+
+            return RedirectToAction("MyProducts");
         }
     }
 }
