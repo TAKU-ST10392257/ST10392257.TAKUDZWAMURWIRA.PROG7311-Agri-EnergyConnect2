@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+@model IEnumerable<Agri_EnergyConnect2.Models.Farmer>
+
+@{
+    ViewData["Title"] = "Farmers";
+}
+
+<h2>All Farmers</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>View Profile</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var farmer in Model)
+        {
+            <tr>
+                <td>@farmer.Name</td>
+                <td>@farmer.Email</td>
+                <td><a href="/Employee/FarmerProfile/@farmer.Id" class="btn btn-info">View Profile</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

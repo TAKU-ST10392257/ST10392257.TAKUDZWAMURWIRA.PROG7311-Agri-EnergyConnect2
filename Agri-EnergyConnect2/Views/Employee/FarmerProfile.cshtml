@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+@model Agri_EnergyConnect2.Models.Farmer
+
+@{
+    ViewData["Title"] = "Farmer Profile";
+}
+
+<h2>@Model.Name's Profile</h2>
+
+<p>Email: @Model.Email</p>
+
+
+<h3>Products</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Production Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Category</td>
+                <td>@product.ProductionDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>

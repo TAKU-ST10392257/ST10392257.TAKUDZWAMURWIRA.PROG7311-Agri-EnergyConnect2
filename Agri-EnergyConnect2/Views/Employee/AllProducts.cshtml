@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+@model IEnumerable<Agri_EnergyConnect2.Models.Product>
+
+@{
+    ViewData["Title"] = "All Products";
+}
+
+<h2>All Products</h2>
+
+<form method="get">
+    <div class="form-group">
+        <label>Category</label>
+        <input name="category" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Production Date</label>
+        <input type="date" name="productionDate" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Filter</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Production Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Category</td>
+                <td>@product.ProductionDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
